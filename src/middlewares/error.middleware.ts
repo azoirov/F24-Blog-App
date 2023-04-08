@@ -10,7 +10,7 @@ export const errorResponder = (
     next: NextFunction
 ) => {
     if (!error.statusCode) {
-        return res.status(StatusCode.Internal).json({
+        return res.status(StatusCode.ServerError).json({
             code: ErrorMessage.ServerError,
             message: error.message,
         });
